@@ -1,0 +1,42 @@
+.ecard {
+  background: #fff; border-radius: var(--r-lg); border: 1px solid var(--border);
+  overflow: hidden; transition: all 0.28s var(--ease); cursor: pointer;
+  display: flex; flex-direction: column;
+}
+.ecard:hover { transform: translateY(-6px); box-shadow: var(--sh-lg); border-color: transparent; }
+.ecard-image {
+  height: 186px; position: relative; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; overflow: hidden;
+}
+.ecard-badge {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--gold); color: var(--navy);
+  font-size: 0.68rem; font-weight: 700; padding: 4px 10px;
+  border-radius: 100px; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.ecard-emoji { font-size: 3.2rem; margin-bottom: 8px; }
+.ecard-cat {
+  position: absolute; bottom: 12px; right: 12px;
+  background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.18);
+  font-size: 0.72rem; font-weight: 600; padding: 3px 9px;
+  border-radius: 100px; color: rgba(255,255,255,0.9); letter-spacing: 0.05em;
+}
+.ecard-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+.ecard-title { font-size: 1.1rem; color: var(--navy); margin-bottom: 10px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.ecard-meta { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.ecard-meta span { font-size: 0.8rem; color: var(--text-2); }
+.ecard-rating { display: flex; align-items: center; gap: 6px; margin-bottom: 12px; font-size: 0.78rem; color: var(--text-2); }
+.ecard-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--border); margin-top: auto; }
+.ecard-price { font-family: var(--font-display); font-size: 1.2rem; color: var(--navy); font-weight: 600; }
+.ecard-orig { font-family: var(--font-body); font-size: 0.8rem; text-decoration: line-through; color: var(--text-3); margin-left: 6px; }
+.ecard-seats { font-size: 0.75rem; font-weight: 600; margin-top: 2px; display: block; }
+.ecard-seats.ok   { color: #16a34a; }
+.ecard-seats.low  { color: #d97706; }
+.ecard-seats.sold-out { color: var(--danger); }
+.ecard-progress { height: 3px; background: var(--cream-2); border-radius: 99px; margin-top: 12px; overflow: hidden; }
+.ecard-progress-bar { height: 100%; border-radius: 99px; transition: width 0.5s; }
+
+/* Compact variant */
+.ecard-compact .ecard-image { height: 140px; }
+.ecard-compact .ecard-emoji { font-size: 2.4rem; }

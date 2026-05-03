@@ -1,0 +1,55 @@
+.auth-page { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+
+.auth-visual {
+  background: var(--navy); display: flex; flex-direction: column;
+  justify-content: center; padding: 60px; position: relative; overflow: hidden;
+}
+.auth-visual::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 65% 25%, rgba(233,168,76,0.22) 0%, transparent 55%);
+  pointer-events: none;
+}
+.auth-logo { font-family: var(--font-display); font-size: 1.55rem; color: #fff; margin-bottom: 44px; display: inline-block; position: relative; }
+.auth-logo span { color: var(--gold); }
+.auth-logo.mobile { display: none; margin-bottom: 32px; }
+.auth-visual h2 { font-size: 2.6rem; color: #fff; margin-bottom: 14px; position: relative; }
+.auth-visual h2 em { color: var(--gold); font-style: italic; }
+.auth-visual > p { color: rgba(255,255,255,0.6); line-height: 1.75; font-size: 0.96rem; position: relative; max-width: 380px; }
+.auth-features { margin-top: 36px; display: flex; flex-direction: column; gap: 14px; position: relative; }
+.auth-feat { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+.af-icon { width: 34px; height: 34px; background: rgba(233,168,76,0.14); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; }
+.demo-creds { margin-top: 36px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-md); padding: 18px; position: relative; }
+.demo-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+.demo-row { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-bottom: 6px; }
+.demo-row code { background: rgba(255,255,255,0.1); padding: 2px 7px; border-radius: 4px; font-size: 0.78rem; }
+
+.auth-form-side { display: flex; flex-direction: column; justify-content: center; padding: 60px; background: var(--white); overflow-y: auto; }
+.auth-form-side h3 { font-size: 1.9rem; color: var(--navy); margin-bottom: 6px; }
+.auth-sub { font-size: 0.9rem; color: var(--text-2); margin-bottom: 32px; }
+.auth-sub a { color: var(--gold-dark); font-weight: 600; }
+.auth-form { display: flex; flex-direction: column; gap: 16px; }
+.pwd-field { position: relative; }
+.pwd-toggle { position: absolute; right: 44px; bottom: 12px; background: none; border: none; cursor: pointer; font-size: 1rem; color: var(--text-3); }
+.forgot-link { position: absolute; right: 0; bottom: 13px; font-size: 0.8rem; color: var(--gold-dark); font-weight: 500; }
+
+.auth-divider { display: flex; align-items: center; gap: 14px; margin: 20px 0; }
+.auth-divider span { font-size: 0.82rem; color: var(--text-3); white-space: nowrap; }
+.auth-divider::before, .auth-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+.quick-logins { display: flex; gap: 10px; }
+.ql-btn { flex: 1; padding: 11px 8px; border: 1.5px solid var(--border-2); border-radius: var(--r-sm); font-family: var(--font-body); font-size: 0.84rem; font-weight: 500; color: var(--text-2); background: #fff; cursor: pointer; transition: all 0.2s; }
+.ql-btn:hover { border-color: var(--navy); background: var(--cream); color: var(--navy); }
+
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.role-select { }
+.role-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+.role-opt { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border: 1.5px solid var(--border-2); border-radius: var(--r-md); cursor: pointer; font-size: 0.9rem; font-weight: 500; color: var(--text-2); transition: all 0.2s; }
+.role-opt.active { border-color: var(--gold); background: rgba(233,168,76,0.08); color: var(--navy); }
+
+@media (max-width: 900px) {
+  .auth-page { grid-template-columns: 1fr; }
+  .auth-visual { display: none; }
+  .auth-form-side { padding: 40px 24px; justify-content: flex-start; padding-top: 60px; }
+  .auth-logo.mobile { display: inline-block; }
+  .form-row-2 { grid-template-columns: 1fr; }
+}

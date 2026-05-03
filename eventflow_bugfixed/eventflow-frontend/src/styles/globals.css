@@ -1,0 +1,78 @@
+:root {
+  --navy:        #0B1622;
+  --navy-2:      #152032;
+  --navy-3:      #1E2F45;
+  --navy-4:      #263A55;
+  --gold:        #E9A84C;
+  --gold-light:  #F5C97A;
+  --gold-dark:   #B8811E;
+  --white:       #FDFAF4;
+  --cream:       #F5F0E8;
+  --cream-2:     #EDE7D9;
+  --text:        #1A1A2A;
+  --text-2:      #4A4A65;
+  --text-3:      #8888A8;
+  --border:      rgba(26,26,42,0.10);
+  --border-2:    rgba(26,26,42,0.18);
+  --success:     #22C55E;
+  --danger:      #EF4444;
+  --info:        #3B82F6;
+  --warning:     #F59E0B;
+
+  --font-display:'Cormorant Garamond', Georgia, serif;
+  --font-body:   'Outfit', system-ui, sans-serif;
+
+  --r-sm:  6px;
+  --r-md:  12px;
+  --r-lg:  20px;
+  --r-xl:  32px;
+
+  --sh-sm: 0 2px 8px rgba(11,22,34,0.07);
+  --sh-md: 0 6px 24px rgba(11,22,34,0.10);
+  --sh-lg: 0 16px 56px rgba(11,22,34,0.16);
+  --sh-gold: 0 8px 32px rgba(233,168,76,0.28);
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+button { font-family: var(--font-body); cursor: pointer; border: none; background: none; }
+input, select, textarea { font-family: var(--font-body); }
+img { max-width: 100%; display: block; }
+h1,h2,h3,h4,h5 { font-family: var(--font-display); line-height: 1.15; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--cream-2); border-radius: 99px; }
+
+/* Page transition */
+.page-enter { opacity: 0; transform: translateY(12px); }
+.page-enter-active { opacity: 1; transform: translateY(0); transition: all 0.35s var(--ease); }
+
+/* Skeleton */
+.skeleton {
+  background: linear-gradient(90deg, var(--cream) 25%, var(--cream-2) 50%, var(--cream) 75%);
+  background-size: 300%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--r-sm);
+}
+@keyframes shimmer { from { background-position: 100%; } to { background-position: -100%; } }
+
+/* Utility classes */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 88px 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
